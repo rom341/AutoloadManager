@@ -26,5 +26,10 @@ namespace AutoloadManager
         {
             _fProfileConfigurator.ShowDialog();
         }
+
+        private void fMain_Load(object sender, EventArgs e)
+        {
+            btnAddNewProfile.PerformClick();
+        }
     }
 }

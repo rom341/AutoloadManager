@@ -17,12 +17,15 @@ namespace AutoloadManager
         {
             InitializeComponent();
             _profile = profile;
+            updateProgramList();
         }
         private void updateProgramList()
         {
             flpListOfPrograms.Controls.Clear();
+            rtbListOfPrograms.Text = "";
             foreach (ProgramForProfile program in _profile.getPrograms())
             {
+                rtbListOfPrograms.Text += program.Path + "\n";
                 Panel panel = PanelManager.createPanelWithProgramName(program);
                 flpListOfPrograms.Controls.Add(panel);
             }
@@ -32,15 +35,29 @@ namespace AutoloadManager
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                rtbListOfPrograms.Text += openFileDialog1.FileName + "\n";
-
-                Image image = Icon.ExtractAssociatedIcon(openFileDialog1.FileName).ToBitmap();
-                ProgramForProfile program = new ProgramForProfile("TestName", openFileDialog1.FileName, image);
-                if (!_profile.addProgram(program))
+                string existingFiles = "";
+                foreach (string filename in openFileDialog1.FileNames)
                 {
-                    MessageBox.Show("Program already exists in profile");
-                    return;
+                    Image image = Icon.ExtractAssociatedIcon(filename).ToBitmap();
+                    ProgramForProfile program = new ProgramForProfile(System.IO.Path.GetFileName(filename), filename, image);
+                    if (!_profile.addProgram(program))
+                    {
+                        existingFiles += filename + "\n";
+                        continue;
+                    }
                 }
+                if(existingFiles!="")
+                {
+                    MessageBox.Show($"Next programs is already exist:\n{existingFiles}");
+                }
+                //}
+                //Image image = Icon.ExtractAssociatedIcon(openFileDialog1.FileName).ToBitmap();
+                //ProgramForProfile program = new ProgramForProfile(openFileDialog1.SafeFileName, openFileDialog1.FileName, image);
+                //if (!_profile.addProgram(program))
+                //{
+                //    MessageBox.Show("Program already exists in profile");
+                //    return;
+                //}
 
                 updateProgramList();
             }

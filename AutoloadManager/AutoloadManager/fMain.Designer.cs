@@ -59,6 +59,7 @@
             this.Controls.Add(this.flpProfilesContainer);
             this.Name = "fMain";
             this.Text = "Autoload manager";
+            this.Load += new System.EventHandler(this.fMain_Load);
             this.ResumeLayout(false);
 
         }
