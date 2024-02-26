@@ -1,0 +1,11 @@
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\bin\Debug\AutoloadManager.exe.config
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\bin\Debug\AutoloadManager.exe
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\bin\Debug\AutoloadManager.pdb
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.csproj.AssemblyReference.cache
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.fMain.resources
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.fProfileConfigurator.resources
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.Properties.Resources.resources
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.csproj.GenerateResource.cache
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.csproj.CoreCompileInputs.cache
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.exe
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.pdb
