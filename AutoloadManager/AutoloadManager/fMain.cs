@@ -13,11 +13,12 @@ namespace AutoloadManager
     public partial class fMain : Form
     {
         private fProfileConfigurator _fProfileConfigurator;
-        private Profile lastProfile;
+        private Profile _lastProfile;
         public fMain()
         {
             InitializeComponent();
-            _fProfileConfigurator = new fProfileConfigurator(ref lastProfile);
+            _lastProfile = new Profile("TestName", "TestDescription", null, new List<ProgramForProfile>());
+            _fProfileConfigurator = new fProfileConfigurator(ref _lastProfile);
             
         }
 

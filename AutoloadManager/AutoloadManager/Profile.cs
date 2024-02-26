@@ -11,15 +11,29 @@ namespace AutoloadManager
     {
         public string name { get; private set; }
         public string description { get; private set; }
-        public Image icon { get; private set; }
-        public string[] files { get; private set; }
-
-        public Profile(string name, string description,Image icon, string[] files)
+        public Image image { get; private set; }
+        private List<ProgramForProfile> _programs;
+        
+        public Profile(string name, string description, Image image, List<ProgramForProfile> programs)
         {
             this.name = name;
             this.description = description;
-            this.icon = icon;
-            this.files = files;
+            this.image = image;
+            this._programs = programs;
+        }
+        public bool addProgram(ProgramForProfile program)
+        {
+            if (_programs.Contains(program))
+            {
+                return false;
+            }
+            _programs.Add(program);
+            return true;
+        }
+
+        public List<ProgramForProfile> getPrograms()
+        {
+            return _programs;
         }
     }
 }

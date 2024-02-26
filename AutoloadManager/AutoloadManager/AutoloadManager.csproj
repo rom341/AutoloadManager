@@ -61,6 +61,7 @@
     <Compile Include="PanelManager.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramForProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>

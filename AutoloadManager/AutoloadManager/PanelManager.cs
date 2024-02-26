@@ -9,7 +9,7 @@ namespace AutoloadManager
 {
     public class PanelManager
     {
-        public static Panel createPanel(Profile profile)
+        public static Panel createPanelWithProgramName(ProgramForProfile program)
         {
             Panel panel = new Panel
             {
@@ -19,15 +19,18 @@ namespace AutoloadManager
 
             Label lProfileName = new Label
             {
-                Text = profile.name,
-                Location = new System.Drawing.Point(10, 10)
+                Text = program.Name,
+                Location = new System.Drawing.Point(0, 0),
+                BorderStyle = BorderStyle.FixedSingle
             };
 
             PictureBox pbIcon = new PictureBox
             {
-                Image = profile.icon,
+                Image = program.Image,
+                SizeMode = PictureBoxSizeMode.Zoom,
                 Size = new System.Drawing.Size(50, 50),
-                Location = new System.Drawing.Point(10, 30)
+                Location = new System.Drawing.Point(0, 20),
+                BorderStyle = BorderStyle.FixedSingle
             };
 
             panel.Controls.Add(lProfileName);

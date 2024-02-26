@@ -18,15 +18,31 @@ namespace AutoloadManager
             InitializeComponent();
             _profile = profile;
         }
+        private void updateProgramList()
+        {
+            flpListOfPrograms.Controls.Clear();
+            foreach (ProgramForProfile program in _profile.getPrograms())
+            {
+                Panel panel = PanelManager.createPanelWithProgramName(program);
+                flpListOfPrograms.Controls.Add(panel);
+            }
+        }
 
         private void btnAddNewProgram_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 rtbListOfPrograms.Text += openFileDialog1.FileName + "\n";
 
-                Panel panel = PanelManager.createPanel(new Profile("Test", "Test", new Bitmap(50, 50), new string[] { openFileDialog1.FileName }));
-                flpListOfPrograms.Controls.Add(panel);
+                Image image = Icon.ExtractAssociatedIcon(openFileDialog1.FileName).ToBitmap();
+                ProgramForProfile program = new ProgramForProfile("TestName", openFileDialog1.FileName, image);
+                if (!_profile.addProgram(program))
+                {
+                    MessageBox.Show("Program already exists in profile");
+                    return;
+                }
+
+                updateProgramList();
             }
         }
     }
