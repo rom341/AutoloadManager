@@ -9,9 +9,9 @@ namespace AutoloadManager
 {
     public struct ProgramForProfile : IEquatable<ProgramForProfile>
     {
-        public string Name { get; private set; }
-        public string Path { get; private set; }
-        public Image Image { get; private set; }
+        public string Name { get; set; }
+        public string Path { get; set; }
+        public Image Image { get; set; }
 
         public ProgramForProfile(string name, string path, Image image)
         {

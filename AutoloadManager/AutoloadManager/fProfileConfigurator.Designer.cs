@@ -67,7 +67,7 @@
             this.rtbListOfPrograms.Location = new System.Drawing.Point(0, 0);
             this.rtbListOfPrograms.Name = "rtbListOfPrograms";
             this.rtbListOfPrograms.ReadOnly = true;
-            this.rtbListOfPrograms.Size = new System.Drawing.Size(294, 108);
+            this.rtbListOfPrograms.Size = new System.Drawing.Size(294, 103);
             this.rtbListOfPrograms.TabIndex = 0;
             this.rtbListOfPrograms.Text = "";
             // 
@@ -88,7 +88,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 20);
+            this.label1.Size = new System.Drawing.Size(294, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Список файлов";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,7 +110,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.rtbListOfPrograms);
             this.splitContainer1.Size = new System.Drawing.Size(294, 132);
-            this.splitContainer1.SplitterDistance = 20;
+            this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2

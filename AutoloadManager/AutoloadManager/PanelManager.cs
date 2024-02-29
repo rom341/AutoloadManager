@@ -36,16 +36,41 @@ namespace AutoloadManager
                 BorderStyle = BorderStyle.FixedSingle
             };
 
+            Button btnEdit = new Button
+            {
+                Text = "Edit",
+                Location = new System.Drawing.Point(140, 25),
+                Size = new System.Drawing.Size(55, 20)
+            };
+
             Button btnRemove = new Button
             {
                 Text = "Remove",
-                Location = new System.Drawing.Point(0, 150),
-                Size = new System.Drawing.Size(50, 20),
-                FlatStyle = FlatStyle.Flat
+                Location = new System.Drawing.Point(140, 50),
+                Size = new System.Drawing.Size(55, 20)
+            };
+
+            btnEdit.Click += (sender, e) =>
+            {
+                fProgramConfigurator fProgramConfigurator = new fProgramConfigurator(ref program);
+                if (fProgramConfigurator.ShowDialog() == DialogResult.OK)
+                {
+                    lProfileName.Text = program.Name;
+                    pbIcon.Image = program.Image;
+                }
+            };
+
+            btnRemove.Click += (sender, e) =>
+            {
+                if (MessageBox.Show("Are you sure?", "Remove program", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    panel.Dispose();
+                }
             };
 
             panel.Controls.Add(lProfileName);
             panel.Controls.Add(pbIcon);
+            panel.Controls.Add(btnEdit);
             panel.Controls.Add(btnRemove);
 
             return panel;

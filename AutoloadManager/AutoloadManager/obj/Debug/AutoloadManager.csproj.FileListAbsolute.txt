@@ -9,3 +9,4 @@ D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadM
 D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.csproj.CoreCompileInputs.cache
 D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.exe
 D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.pdb
+D:\Git\Repos\AutoloadManager\AutoloadManager\AutoloadManager\obj\Debug\AutoloadManager.fProgramConfigurator.resources

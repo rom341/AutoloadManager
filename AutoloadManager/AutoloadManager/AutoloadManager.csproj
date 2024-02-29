@@ -58,6 +58,12 @@
     <Compile Include="fProfileConfigurator.Designer.cs">
       <DependentUpon>fProfileConfigurator.cs</DependentUpon>
     </Compile>
+    <Compile Include="fProgramConfigurator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fProgramConfigurator.Designer.cs">
+      <DependentUpon>fProgramConfigurator.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelManager.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Program.cs" />
@@ -68,6 +74,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fProfileConfigurator.resx">
       <DependentUpon>fProfileConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fProgramConfigurator.resx">
+      <DependentUpon>fProgramConfigurator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
