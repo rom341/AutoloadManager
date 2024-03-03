@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoloadManager
 {
-    public struct ProgramForProfile : IEquatable<ProgramForProfile>
+    public class ProgramForProfile : IEquatable<ProgramForProfile>
     {
         public string Name { get; set; }
         public string Path { get; set; }

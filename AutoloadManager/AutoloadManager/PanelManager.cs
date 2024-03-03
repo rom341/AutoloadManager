@@ -11,6 +11,8 @@ namespace AutoloadManager
     {
         public static Panel createPanelWithProgramName(ProgramForProfile program)
         {
+            ProgramForProfile programCopy = program;
+            programCopy.Path = "new path";
             Panel panel = new Panel
             {
                 Size = new System.Drawing.Size(200, 80),
@@ -52,7 +54,7 @@ namespace AutoloadManager
 
             btnEdit.Click += (sender, e) =>
             {
-                fProgramConfigurator fProgramConfigurator = new fProgramConfigurator(ref program);
+                fProgramConfigurator fProgramConfigurator = new fProgramConfigurator(ref programCopy);
                 if (fProgramConfigurator.ShowDialog() == DialogResult.OK)
                 {
                     lProfileName.Text = program.Name;
