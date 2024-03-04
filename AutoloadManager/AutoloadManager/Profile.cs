@@ -9,9 +9,9 @@ namespace AutoloadManager
 {
     public class Profile
     {
-        public string name { get; private set; }
-        public string description { get; private set; }
-        public Image image { get; private set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public Image image { get; set; }
         private List<ProgramForProfile> _programs;
         
         public Profile(string name, string description, Image image, List<ProgramForProfile> programs)

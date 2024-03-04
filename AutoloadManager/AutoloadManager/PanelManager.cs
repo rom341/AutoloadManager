@@ -12,18 +12,26 @@ namespace AutoloadManager
         public static Panel createPanelWithProgramName(ProgramForProfile program)
         {
             ProgramForProfile programCopy = program;
-            programCopy.Path = "new path";
             Panel panel = new Panel
             {
-                Size = new System.Drawing.Size(200, 80),
+                Size = new System.Drawing.Size(200, 100),
                 BorderStyle = BorderStyle.FixedSingle,
                 BackColor = System.Drawing.Color.LightGray
             };
 
-            Label lProfileName = new Label
+            Label lProgramName = new Label
             {
                 Text = program.Name,
                 Location = new System.Drawing.Point(0, 0),
+                AutoSize = false,
+                Size = new System.Drawing.Size(200, 20),
+                BorderStyle = BorderStyle.FixedSingle,
+            };
+
+            Label lFileName = new Label
+            {
+                Text = program.Path,
+                Location = new System.Drawing.Point(0, 20),
                 AutoSize = false,
                 Size = new System.Drawing.Size(200, 20),
                 BorderStyle = BorderStyle.FixedSingle,
@@ -34,21 +42,21 @@ namespace AutoloadManager
                 Image = program.Image,
                 SizeMode = PictureBoxSizeMode.Zoom,
                 Size = new System.Drawing.Size(50, 50),
-                Location = new System.Drawing.Point(0, 20),
+                Location = new System.Drawing.Point(0, 40),
                 BorderStyle = BorderStyle.FixedSingle
             };
 
             Button btnEdit = new Button
             {
                 Text = "Edit",
-                Location = new System.Drawing.Point(140, 25),
+                Location = new System.Drawing.Point(140, 45),
                 Size = new System.Drawing.Size(55, 20)
             };
 
             Button btnRemove = new Button
             {
                 Text = "Remove",
-                Location = new System.Drawing.Point(140, 50),
+                Location = new System.Drawing.Point(140, 70),
                 Size = new System.Drawing.Size(55, 20)
             };
 
@@ -57,7 +65,8 @@ namespace AutoloadManager
                 fProgramConfigurator fProgramConfigurator = new fProgramConfigurator(ref programCopy);
                 if (fProgramConfigurator.ShowDialog() == DialogResult.OK)
                 {
-                    lProfileName.Text = program.Name;
+                    lProgramName.Text = program.Name;
+                    lFileName.Text = program.Path;
                     pbIcon.Image = program.Image;
                 }
             };
@@ -70,7 +79,8 @@ namespace AutoloadManager
                 }
             };
 
-            panel.Controls.Add(lProfileName);
+            panel.Controls.Add(lProgramName);
+            panel.Controls.Add(lFileName);
             panel.Controls.Add(pbIcon);
             panel.Controls.Add(btnEdit);
             panel.Controls.Add(btnRemove);

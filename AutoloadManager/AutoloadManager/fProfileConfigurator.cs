@@ -22,10 +22,8 @@ namespace AutoloadManager
         private void updateProgramList()
         {
             flpListOfPrograms.Controls.Clear();
-            rtbListOfPrograms.Text = "";
             foreach (ProgramForProfile program in _profile.getPrograms())
             {
-                rtbListOfPrograms.Text += program.Path + "\n";
                 Panel panel = PanelManager.createPanelWithProgramName(program);
                 flpListOfPrograms.Controls.Add(panel);
             }
@@ -50,16 +48,28 @@ namespace AutoloadManager
                 {
                     MessageBox.Show($"Next programs is already exist:\n{existingFiles}");
                 }
-                //}
-                //Image image = Icon.ExtractAssociatedIcon(openFileDialog1.FileName).ToBitmap();
-                //ProgramForProfile program = new ProgramForProfile(openFileDialog1.SafeFileName, openFileDialog1.FileName, image);
-                //if (!_profile.addProgram(program))
-                //{
-                //    MessageBox.Show("Program already exists in profile");
-                //    return;
-                //}
 
                 updateProgramList();
+            }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            _profile.name = tbName.Text;
+            _profile.description = tbDescription.Text;
+            _profile.image = pbIcon.Image;
+            DialogResult = DialogResult.OK;
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void btnChangeIcon_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pbIcon.Image = Icon.ExtractAssociatedIcon(openFileDialog1.FileName).ToBitmap();
             }
         }
     }

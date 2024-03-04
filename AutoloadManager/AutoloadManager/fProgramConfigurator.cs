@@ -30,7 +30,6 @@ namespace AutoloadManager
             _program.Image = pbIcon.Image;
 
             DialogResult = DialogResult.OK;
-            //this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -49,6 +48,7 @@ namespace AutoloadManager
 
         private void btnChangeFileName_Click(object sender, EventArgs e)
         {
+            openFileDialog1.FileName = _program.Path;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 lFileName.Text = openFileDialog1.FileName;
